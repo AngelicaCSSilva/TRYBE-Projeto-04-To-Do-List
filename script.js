@@ -35,10 +35,27 @@ function changeGrey(event) {
   item.classList.add('selected');
 }
 
+function crossOff(event) {
+  const item = event.target;
+  const itemClassList = item.classList;
+  const completed = 'completed';
+  if (itemClassList.contains(completed)) {
+    itemClassList.remove(completed);
+  } else {
+    itemClassList.add(completed);
+  }
+}
+
 function listToGrey() {
   const ordenedList = document.querySelector('ol');
   ordenedList.addEventListener('click', changeGrey);
 }
 
+function crossOffList() {
+  const ordenedList = document.querySelector('ol');
+  ordenedList.addEventListener('dblclick', crossOff);
+}
+
+crossOffList();
 buttonAddToDo();
 listToGrey();
