@@ -22,5 +22,16 @@ function buttonAddToDo() {
   buttonAdd.addEventListener('click', getToDo);
 }
 
+function changeGrey(event) {
+  const item = event.target;
+  console.log(item);
+  item.classList.add('selected');
+}
+
+function listToGrey() {
+  const ordenedList = document.querySelector('ol');
+  ordenedList.addEventListener('click', changeGrey);
+}
 
 buttonAddToDo();
+listToGrey();
