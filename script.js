@@ -22,9 +22,16 @@ function buttonAddToDo() {
   buttonAdd.addEventListener('click', getToDo);
 }
 
+function removeSelected() {
+  const selected = document.querySelector('.selected');
+  if (selected != null) {
+    selected.classList.remove('selected');
+  }
+}
+
 function changeGrey(event) {
+  removeSelected();
   const item = event.target;
-  console.log(item);
   item.classList.add('selected');
 }
 
