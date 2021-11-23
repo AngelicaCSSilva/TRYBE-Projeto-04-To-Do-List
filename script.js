@@ -67,6 +67,19 @@ function btnClearAll() {
   btnClear.addEventListener('click', clearAll);
 }
 
+function clearFinished() {
+  const listFinished = document.querySelectorAll('.completed');
+  for (let index = (listFinished.length - 1); index >= 0; index -= 1) {
+    listFinished[index].remove();
+  }
+}
+
+function btnClearFinished() {
+  const btnCFinished = document.querySelector('#remover-finalizados');
+  btnCFinished.addEventListener('click', clearFinished);
+}
+
+btnClearFinished();
 btnClearAll();
 crossOffList();
 buttonAddToDo();
