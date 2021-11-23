@@ -55,7 +55,19 @@ function crossOffList() {
   const ordenedList = document.querySelector('ol');
   ordenedList.addEventListener('dblclick', crossOff);
 }
+function clearAll() {
+  const list = document.querySelector('ol');
+  for (let index = (list.children.length - 1); index >= 0; index -= 1) {
+    list.children[index].remove();
+  }
+}
 
+function btnClearAll() {
+  const btnClear = document.querySelector('#apaga-tudo');
+  btnClear.addEventListener('click', clearAll);
+}
+
+btnClearAll();
 crossOffList();
 buttonAddToDo();
 listToGrey();
