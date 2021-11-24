@@ -1,5 +1,4 @@
 let newToDo = '';
-
 const listOl = document.querySelector('#lista-tarefas');
 
 // Adiciona tarefa na lista.
@@ -93,6 +92,42 @@ function btnClearFinished() {
   btnCFinished.addEventListener('click', clearFinished);
 }
 
+// Transforma a lista de tarefas em um array para ser salvo.
+function makeSaveArray() {
+  const todoList = document.querySelectorAll('ol li');
+  const arrayToDos = [];
+  for (let index = 0; index < todoList.length; index += 1) {
+    arrayToDos.push(todoList[index].innerText);
+  }
+
+  return arrayToDos;
+}
+
+// Salva todas as tarefas.
+function saveAll() {
+  const array = makeSaveArray();
+  localStorage.setItem('toDos', JSON.stringify(array));
+}
+
+// Adiciona a função de salvar as tarefas ao botão.
+function btnSaveAll() {
+  const btnSave = document.querySelector('#salvar-tarefas');
+  btnSave.addEventListener('click', saveAll);
+}
+
+// Carrega, se houver, a lista salva.
+function loadPrevious() {
+  let toDos = localStorage.getItem('toDos');
+  if (toDos) {
+    toDos = JSON.parse(toDos);
+    for (let index = 0; index < toDos.length; index += 1) {
+      addToDoItem(toDos[index]);
+    }
+  }
+}
+
+loadPrevious();
+btnSaveAll();
 btnClearFinished();
 btnClearAll();
 crossOffList();
