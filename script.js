@@ -112,6 +112,19 @@ function loadPrevious() {
   }
 }
 
+// Apaga todas as tarefas marcadas como terminadas (completed).
+function clearSelected() {
+  const getSelected = document.querySelector('.selected');
+  getSelected.remove();
+}
+
+// Adiciona a função de apagar as tarefas terminadas ao botão.
+function btnClearSelected() {
+  const btnCFinished = document.querySelector('#remover-selecionado');
+  btnCFinished.addEventListener('click', clearSelected);
+}
+
+btnClearSelected();
 loadPrevious();
 btnSaveAll();
 btnClearFinished();
