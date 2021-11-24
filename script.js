@@ -38,12 +38,13 @@ function changeGrey(event) {
 function crossOff(event) {
   const item = event.target;
   const itemClassList = item.classList;
-  const completed = 'completed';
-  if (itemClassList.contains(completed)) {
+  /*   if (itemClassList.contains(completed)) {
     itemClassList.remove(completed);
   } else {
     itemClassList.add(completed);
-  }
+  } */
+  // ref.: https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+  itemClassList.toggle('completed');
 }
 
 function listToGrey() {
