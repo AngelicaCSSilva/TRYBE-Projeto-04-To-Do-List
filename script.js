@@ -2,12 +2,14 @@ let newToDo = '';
 
 const listOl = document.querySelector('#lista-tarefas');
 
+// Adiciona tarefa na lista.
 function addToDoItem(text) {
   const newItem = document.createElement('li');
   newItem.innerText = text;
   listOl.appendChild(newItem);
 }
 
+// Captura texto inserido no input.
 function getToDo() {
   const getText = document.querySelector('#texto-tarefa');
   newToDo = getText.value;
@@ -17,11 +19,13 @@ function getToDo() {
   addToDoItem(newToDo);
 }
 
+// Adiciona função ao botão de criar nova tarefa.
 function buttonAddToDo() {
   const buttonAdd = document.querySelector('#criar-tarefa');
   buttonAdd.addEventListener('click', getToDo);
 }
 
+// Remove a classe 'selected' caso tenha alguma tarefa selecionada.
 function removeSelected() {
   const selected = document.querySelector('.selected');
   if (selected != null) {
@@ -29,12 +33,14 @@ function removeSelected() {
   }
 }
 
+// Adiciona a classe 'selected' (cor cinza) quando se clica em uma tarefa.
 function changeGrey(event) {
   removeSelected();
   const item = event.target;
   item.classList.add('selected');
 }
 
+// Risca e tira o risco da tarefa.
 function crossOff(event) {
   const item = event.target;
   const itemClassList = item.classList;
@@ -47,15 +53,19 @@ function crossOff(event) {
   itemClassList.toggle('completed');
 }
 
+// Adiciona a função ao clicar na tarefa, para que ela seja selecionada (cor cinza).
 function listToGrey() {
   const ordenedList = document.querySelector('ol');
   ordenedList.addEventListener('click', changeGrey);
 }
 
+// Adiciona a função de riscar/tirar o risco da tarefa com duplo clique.
 function crossOffList() {
   const ordenedList = document.querySelector('ol');
   ordenedList.addEventListener('dblclick', crossOff);
 }
+
+// Apaga todas as tarefas.
 function clearAll() {
   const list = document.querySelector('ol');
   for (let index = (list.children.length - 1); index >= 0; index -= 1) {
@@ -63,11 +73,13 @@ function clearAll() {
   }
 }
 
+// Adiciona a função de apagar tudo ao botão.
 function btnClearAll() {
   const btnClear = document.querySelector('#apaga-tudo');
   btnClear.addEventListener('click', clearAll);
 }
 
+// Apaga todas as tarefas marcadas como terminadas (completed).
 function clearFinished() {
   const listFinished = document.querySelectorAll('.completed');
   for (let index = (listFinished.length - 1); index >= 0; index -= 1) {
@@ -75,6 +87,7 @@ function clearFinished() {
   }
 }
 
+// Adiciona a função de apagar as tarefas terminadas ao botão.
 function btnClearFinished() {
   const btnCFinished = document.querySelector('#remover-finalizados');
   btnCFinished.addEventListener('click', clearFinished);
