@@ -124,6 +124,38 @@ function btnClearSelected() {
   btnCFinished.addEventListener('click', clearSelected);
 }
 
+function moveUp() {
+  const itemMoveUp = document.querySelector('.selected');
+  if (itemMoveUp) {
+    const parent = itemMoveUp.parentNode;
+    const previousItem = itemMoveUp.previousSibling;
+    parent.insertBefore(itemMoveUp, previousItem);
+  }
+}
+
+function moveDown() {
+  const itemMoveDown = document.querySelector('.selected');
+  if (itemMoveDown) {
+    const parent = itemMoveDown.parentNode;
+    if (parent.lastChild !== itemMoveDown) {
+      const nextItem = itemMoveDown.nextSibling.nextSibling;
+      parent.insertBefore(itemMoveDown, nextItem);
+    }
+  }
+}
+
+function btnMoveDown() {
+  const btnDown = document.querySelector('#mover-baixo');
+  btnDown.addEventListener('click', moveDown);
+}
+
+function btnMoveUp() {
+  const btnUp = document.querySelector('#mover-cima');
+  btnUp.addEventListener('click', moveUp);
+}
+
+btnMoveDown();
+btnMoveUp();
 btnClearSelected();
 loadPrevious();
 btnSaveAll();
