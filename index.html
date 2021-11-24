@@ -8,28 +8,32 @@
   <title>To Do List</title>
 </head>
 <body>
-  <header><h1>Minha Lista de Tarefas</h1></header>
-  <main class="container">
-    <section>
-      <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-      <input type="text" name="text-todo" id="texto-tarefa">
-      <button type="submit" id="criar-tarefa">Criar nova tarefa</button>
-      <div>
-        <button id="apaga-tudo">Apagar tudo</button>
-        <button id="remover-finalizados">Remover finalizados</button>
-        <button id="salvar-tarefas">Salvar tarefas</button>
-      </div>
-      <div>
-        <button id="remover-selecionado">Apagar selecionado</button>
-        <button id="mover-cima">↑</button>
-        <button id="mover-baixo">↓</button>
-      </div>
-    </section>
-    <section>
-      <ol id="lista-tarefas">
-      </ol>
-    </section>
-  </main>
+  <div class="container">
+    <header><h1>Minha Lista de Tarefas</h1></header>
+    <main>
+      <section>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <input type="text" name="text-todo" id="texto-tarefa" placeholder="Type a new task. To add it, click on the plus sign here ->">
+        <button type="submit" id="criar-tarefa">+</button>
+        <div class='buttons line-bottom'>
+          <button id="apaga-tudo">Clear all</button>
+          <button id="remover-finalizados">Remove completed</button>
+          <button id="salvar-tarefas">Save list</button>
+        </div>
+      </section>
+      <section>
+        <ol id="lista-tarefas">
+        </ol>
+      </section>
+      <section>
+        <div class='buttons bottom'>
+          <button id="remover-selecionado">x</button>
+          <button id="mover-cima">↑</button>
+          <button id="mover-baixo">↓</button>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 <script src="script.js"></script>
 </html>

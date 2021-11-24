@@ -1,7 +1,114 @@
+body {
+  color: azure;
+  background-color: #1C2541;
+  font-family: 'roboto', sans-serif;
+}
+
 .selected {
   background-color: grey;
 }
 
 .completed {
-  text-decoration: line-through;
+  text-decoration: line-through solid rgb(0, 0, 0);
+  background-color: rgb(80, 67, 85);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+main {
+  text-align: center;
+  border-radius: 20px;
+  background-color: #3A506B;
+  padding: 0.5em 2em;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+#texto-tarefa {
+  /* padding: 5px 10px;
+  width: 80%; */
+
+  float: inline-start;
+  padding: 10px;
+  width: 85%;
+  height: 1em;
+  background-color: #1C2541;
+  border: none;
+  border-radius: 5em;
+  color: rgb(151, 153, 165);
+}
+
+#criar-tarefa {
+  float: right;
+}
+
+button {
+  background-color: #5BC0BE;
+  border-radius: 20px;
+  border-width: 0px;
+  font-size: 18px;
+  color: #1C2541;
+}
+
+button:hover {
+  background-color: #1C2541;
+  color: #5BC0BE;
+}
+
+#lista-tarefas {
+  overflow: auto;
+  margin-top: 5px;
+  width: 395px;
+  height: 15em;
+  list-style: none;
+  margin: 1em 1em;
+  padding: 0;
+  padding-bottom: 1em;
+  text-decoration: none;
+}
+
+.buttons{
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom {
+  padding-top: 1em;
+  border-top: 1px solid white;
+}
+
+.bottom button{
+  padding: 1em 2em;
+  border-radius: 5em;
+}
+
+.conteudo {
+  font-size: 18px;
+  margin: 27px 25px;
+  border-radius: 20px;
+  width: 350px;
+  height: 50px;
+  background-color: #1C2541;
+}
+
+ol li {
+  margin-top: 1em;
+  background-color: #1C2541;
+  padding: 0.5em;
+  border-radius: 5em;
+  margin-left: none;
+}
+
+.line-bottom {
+  padding-bottom: 1em;
+  border-bottom: 1px solid white;
 }
