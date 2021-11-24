@@ -124,6 +124,8 @@ function btnClearSelected() {
   btnCFinished.addEventListener('click', clearSelected);
 }
 
+// Função que move o item selecionado para cima.
+// ref.: https://developer.mozilla.org/pt-BR/docs/Web/API/Node/insertBefore
 function moveUp() {
   const itemMoveUp = document.querySelector('.selected');
   if (itemMoveUp) {
@@ -133,6 +135,7 @@ function moveUp() {
   }
 }
 
+// Função que move o item selecionado para baixo.
 function moveDown() {
   const itemMoveDown = document.querySelector('.selected');
   if (itemMoveDown) {
@@ -144,11 +147,13 @@ function moveDown() {
   }
 }
 
+// Adiciona a função de mover para baixo ao botão.
 function btnMoveDown() {
   const btnDown = document.querySelector('#mover-baixo');
   btnDown.addEventListener('click', moveDown);
 }
 
+// Adiciona a função de mover para cima ao botão.
 function btnMoveUp() {
   const btnUp = document.querySelector('#mover-cima');
   btnUp.addEventListener('click', moveUp);
