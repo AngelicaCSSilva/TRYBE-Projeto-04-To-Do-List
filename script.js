@@ -6,6 +6,8 @@ function addToDoItem(text) {
   const newItem = document.createElement('li');
   newItem.innerText = text;
   listOl.appendChild(newItem);
+  crossOffList();
+  listToGrey();
 }
 
 // Captura texto inserido no input.
@@ -55,13 +57,18 @@ function crossOff(event) {
 // Adiciona a função ao clicar na tarefa, para que ela seja selecionada (cor cinza).
 function listToGrey() {
   const ordenedList = document.querySelector('ol');
-  ordenedList.addEventListener('click', changeGrey);
+  for (let index = 0; index < ordenedList.children.length; index += 1) {
+    ordenedList.children[index].addEventListener('click', changeGrey);
+  }
+  
 }
 
 // Adiciona a função de riscar/tirar o risco da tarefa com duplo clique.
 function crossOffList() {
   const ordenedList = document.querySelector('ol');
-  ordenedList.addEventListener('dblclick', crossOff);
+  for (let index = 0; index < ordenedList.children.length; index += 1) {
+    ordenedList.children[index].addEventListener('dblclick', crossOff);
+  }
 }
 
 // Apaga todas as tarefas.
